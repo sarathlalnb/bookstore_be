@@ -1,0 +1,62 @@
+const mongoose = require('mongoose')
+
+const bookSchema = mongoose.Schema({
+    title:{
+        type:String,
+        required:true
+    },
+    author:{
+        type:String,
+        required:true
+    },
+    imageUrl:{
+        type:String,
+        default:''
+    },
+    noOfPages:{
+        type:Number,
+        required:true
+    },
+    price:{
+        type:Number,
+        required:true
+    },
+    discountPrice:{
+        type:Number,
+        default:0
+    },
+    abstract:{
+        type:String,
+        required:true
+    },
+    publisher:{
+        type:String,
+        required:true
+    },
+    category:{
+        type:String,
+        required:true
+    },
+    userMail:{
+        type:String,
+        required:true
+    },
+    brought:{
+        type:String,
+        default:""
+    },
+    language:{
+        type:String,
+        required:true
+    },
+    isbn:{
+        type:String,
+        required:true
+    },
+    uploadedImages:{
+        type:Array,
+        required:true,
+    }
+})
+
+module.exports = mongoose.model('books',bookSchema)
